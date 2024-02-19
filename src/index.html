@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=public-sans@400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Easybank landing page</title>
   <script defer src="./script.js"></script>
 </head>
 
-<body class="min-h-[100vh] public-sans bg-[#fafafa] overflow-x-hidden">
+<body class="min-h-[100vh] public-sans bg-[#fafafa] overflow-x-hidden font-Public">
+
 
   <!-- mobile-nav -->
 
-  <nav class="lg:hidden">
+  <nav class="lg:hidden z-50">
     <div class="flex justify-between items-center p-8 shadow-lg bg-white">
       <div class="cursor-pointer scale-125">
         <img src="/images/logo.svg" alt="logo">
@@ -27,9 +29,9 @@
         <img src="/images/icon-close.svg" alt="icon-close">
       </div>
     </div>
-    <div id="menu" class="hidden py-8 bg-white m-6">
-      <ul class="text-center flex flex-col gap-7">
-        <li><a class="" href="#">Home</a></li>
+    <div id="menu" class="hidden bg-white absolute inset-0 h-[15em] mx-8 mt-28 z-30">
+      <ul id="list-container" class="text-center flex flex-col gap-4 text-[#9698a6] pt-6">
+        <li><a href="#home">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">Blog</a></li>
@@ -41,6 +43,7 @@
   <!-- mobile-nav -->
 
 
+  <div class="overlay hidden w-[100vw] h-[100vh] bg-slate-800/50 absolute z-20 lg:hidden"></div>
 
 
   <!-- desktop-nav -->
@@ -60,7 +63,7 @@
     </div>
     <div>
       <button
-        class="rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 px-8 py-2 text-white font-semibold hover:brightness-125 transition-all">
+        class="rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 px-8 py-2 text-white font-medium hover:brightness-125 transition-all">
         Request Invite
       </button>
     </div>
@@ -75,35 +78,35 @@
 
   <div>
     <div
-      class="hero-section min-h-[100vh] flex flex-col lg:grid lg:place-items-center lg:grid-cols-2 lg:max-w-9xl items-center">
+      class="hero-section min-h-[100vh] flex flex-col lg:grid lg:place-items-center lg:grid-cols-2 items-center mx-20">
 
       <div class="absolute top-[30em] md:top-[42em] lg:mt-[-10em] lg:static">
         <div class="flex flex-col items-center lg:items-baseline gap-6 top-0">
-          <div class="text-5xl leading-[1em] text-[#2d314d] text-center lg:text-left">
+          <div class="text-5xl leading-[1em] text-[#2d314d] text-center lg:text-left 2xl:text-6xl">
             Next generation <br class="hidden lg:block"> digital banking
           </div>
-          <div class="text-balance text-[#9698a6] text-center lg:text-left leading-7">
-            Take your financial life online. Your Easybank account <br> will be a one-stop-shop
-            for spending, saving, <br> budgeting, investing, and much more.
+          <div class="text-balance text-[#9698a6] text-center lg:text-left leading-7 2xl:text-lg">
+            Take your financial life online. Your Easybank account <br class="hidden lg:block"> will be a one-stop-shop
+            for spending, saving, <br class="hidden lg:block"> budgeting, investing, and much more.
           </div>
           <div
-            class="bg-gradient-to-r from-emerald-400 to-cyan-400 px-8 py-2 cursor-pointer rounded-full text-white font-semibold md:mx-auto lg:mx-0 hover:brightness-125 transition-all">
+            class="bg-gradient-to-r from-emerald-400 to-cyan-400 px-8 py-2 cursor-pointer rounded-full text-white font-medium md:mx-auto lg:mx-0 hover:brightness-125 transition-all">
             <button>Request Invite</button>
           </div>
         </div>
       </div>
 
-      <div class="absolute top-20 lg:mt-[-10em] lg:static -z-10">
+      <div class="absolute lg:mt-[-10em] lg:relative -z-20">
 
-        <img class="relative top-0 right-0 md:scale-[2.1] lg:hidden" src="/images/bg-intro-mobile.svg"
-          alt="bg-intro-mobile">
+        <img class="relative scale-[1] top-0 right-0 max-w-[100%] md:scale-[2.05] lg:hidden"
+          src="/images/bg-intro-mobile.svg" alt="bg-intro-mobile">
 
         <img
-          class="hidden lg:flex right-0 lg:right-[-15em] lg:top-[7em] lg:absolute lg:scale-[0.55] xl:right-[-24em] xl:scale-[0.85] xl:top-[-10em]"
+          class="hidden lg:flex right-0 lg:right-0 lg:top-[7em] lg:absolute lg:scale-[1.1] xl:right-[-10em] max-w-[100%] xl:scale-[1.3] xl:top-[6em] 2xl:right-[-8em]"
           src="/images/bg-intro-desktop.svg" alt="bg-intro-desktop">
 
         <img
-          class="absolute top-[-8em] md:top-[-4em] md:scale-[1.5] lg:top-0 lg:scale-[0.95] lg:relative xl:top-[-4em] xl:right-[-6em]"
+          class="absolute top-[-8em] md:top-[-4em] md:scale-[1.5] lg:top-0 lg:scale-[0.95] lg:relative xl:top-[-1em] xl:right-[-12em]"
           src="/images/image-mockups.png" alt="">
       </div>
     </div>
@@ -112,7 +115,7 @@
 
 
 
-    <div class="text-center py-[8em] bg-[#f3f4f6]">
+    <div id="home" class="text-center py-[8em] bg-[#f3f4f6]">
       <div class="lg:text-left lg:pl-28 xl:pl-20">
         <div class="text-4xl text-[#2d314d]">
           Why choose <br class="lg:hidden"> Easybank?
@@ -329,11 +332,13 @@
               <img src="/images/logo-footer.svg" alt="logo">
             </div>
             <div class="flex flex-row gap-3">
-              <img class="cursor-pointer" src="/images/icon-facebook.svg" alt="logo">
-              <img class="cursor-pointer" src="/images/icon-youtube.svg" alt="logo">
-              <img class="cursor-pointer" src="/images/icon-twitter.svg" alt="logo">
-              <img class="cursor-pointer" src="/images/icon-pinterest.svg" alt="logo">
-              <img class="cursor-pointer" src="/images/icon-instagram.svg" alt="logo">
+              <img class="cursor-pointer hover:text-teal-400 transition-all" src="/images/icon-facebook.svg" alt="logo">
+              <img class="cursor-pointer hover:text-teal-400 transition-all" src="/images/icon-youtube.svg" alt="logo">
+              <img class="cursor-pointer hover:text-teal-400 transition-all" src="/images/icon-twitter.svg" alt="logo">
+              <img class="cursor-pointer hover:text-teal-400 transition-all" src="/images/icon-pinterest.svg"
+                alt="logo">
+              <img class="cursor-pointer hover:text-teal-400 transition-all" src="/images/icon-instagram.svg"
+                alt="logo">
             </div>
           </div>
 
