@@ -43,5 +43,14 @@ function disbableNav () {
 
 };
 
+
+function setActive (element) {
+
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+
+    element.classList.add('active')
+    
+}
+
 menuOn.addEventListener('click', enableNav);
 menuOff.addEventListener('click', disbableNav);

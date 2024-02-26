@@ -48,17 +48,22 @@
 
   <!-- desktop-nav -->
 
-  <nav class="hidden lg:flex lg:justify-around items-center p-8 bg-white z-30">
+  <nav class="hidden lg:flex lg:justify-around items-center p-8 bg-white z-30 relative">
     <div>
       <img src="./images/logo.svg" alt="logo">
     </div>
     <div>
       <ul class="flex flex-row gap-6 text-[#9698a6]">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Careers</a></li>
+        <li><a class="nav-link hover:text-gray-600 transition-all active relative" onclick="setActive(this)"
+            href="#">Home</a></li>
+        <li><a class="nav-link hover:text-gray-600 transition-all relative" onclick="setActive(this)" href="#">About</a>
+        </li>
+        <li><a class="nav-link hover:text-gray-600 transition-all relative" onclick="setActive(this)"
+            href="#">Contact</a></li>
+        <li><a class="nav-link hover:text-gray-600 transition-all relative" onclick="setActive(this)" href="#">Blog</a>
+        </li>
+        <li><a class="nav-link hover:text-gray-600 transition-all relative" onclick="setActive(this)"
+            href="#">Careers</a></li>
       </ul>
     </div>
     <div>
@@ -82,7 +87,7 @@
 
       <div class="absolute top-[30em] md:top-[42em] lg:mt-[-10em] lg:static">
         <div class="flex flex-col items-center lg:items-baseline gap-6 top-0">
-          <div class="text-5xl leading-[1em] text-[#2d314d] text-center lg:text-leftxt-6xl">
+          <div class="text-5xl leading-[1em] text-[#2d314d] text-center lg:text-left">
             Next generation <br class="hidden lg:block"> digital banking
           </div>
           <div class="text-balance text-[#9698a6] text-center lg:text-left leading-7xt-lg">
@@ -189,7 +194,7 @@
       </div>
 
       <div
-        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 place-items-center mx-8 lg:mx-28 xl:mx-20 2xl:mx-36">
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 place-items-center mx-8 lg:mx-28 xl:mx-20 2xl:mx-36">
         <div class="bg-white rounded-md ">
           <div>
             <img class="rounded-t-md h-[15em] w-full object-cover 2xl:h-[20em] overflow-hidden"
